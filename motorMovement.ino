@@ -5,7 +5,7 @@
 #define EN_A  9  // Motor A enable pin
 #define EN_B  10 // Motor B enable pin
 
-char prevChoice = "rock";
+char prevChoice[] = "rock";
 
 void setup() {
   pinMode(IN1_A, OUTPUT);
