@@ -6,7 +6,7 @@
 #define EN_B  10 // Motor B enable pin
 
 char prevChoice = "rock";
-char cC = "";//current choice
+int cC = "";//current choice 1 = rock 2 = paper 3 = scisors
 
 void setup() {
   pinMode(IN1_A, OUTPUT);
@@ -23,15 +23,15 @@ void loop() {
   long random = randomChoice();
   if (random == 1) {
     rock();
-    currentChoice = "rock";
+    currentChoice = 1;
   }
   else if (random == 2) {
     paper();
-    currentChoice = "paper";
+    currentChoice = 2;
   }
   else {
     scissors();
-    currentChoice = "scissors";
+    currentChoice = 3;
   }
 
 }
