@@ -56,7 +56,7 @@ void sense(HUSKYLENSResult result)
     }
 
   }
-  else if(result.ID == 2){
+  else if(result.ID == 3){
     if(cC == 1){
       //green light
     }
