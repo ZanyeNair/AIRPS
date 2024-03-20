@@ -6,7 +6,7 @@
 #define EN_B  10 // Motor B enable pin
 
 char prevChoice = "rock";
-char currentChoice = "";
+char cC = "";//current choice
 
 void setup() {
   pinMode(IN1_A, OUTPUT);
