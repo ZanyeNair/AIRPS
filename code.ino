@@ -8,7 +8,7 @@
 #include "SoftwareSerial.h"
 
 char prevChoice = "rock";
-int cC = "";//current choice 1 = rock 2 = paper 3 = scisors
+int cC = "";//current choice 1&&4 = rock 2 = paper 3 = scisors
 HUSKYLENS huskylens;
 
 void setup() {
@@ -135,7 +135,7 @@ void printResult(HUSKYLENSResult result){
 
 void sense(HUSKYLENSResult result)
 {
-  if(result.ID == 1){
+  if(result.ID == 1||result.ID == 4){
     if(cC == 1){
       //white light
     }
