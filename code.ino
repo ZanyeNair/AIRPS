@@ -1,4 +1,4 @@
-#define motor1pin1 2  // Motor A IN1 pin
+#define motor1pin1 2  // Moto r A IN1 pin
 #define motor1pin2 3  // Motor A IN2 pin
 #define motor2pin1 4  // Motor B IN1 pin
 #define motor2pin2 5  // Motor B IN2 pin
