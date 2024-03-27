@@ -112,53 +112,83 @@ void setup() {
 }
 
 void loop() {
+   long random = randomChoice();
+  bool boo = true;
+  while(boo){
+    for(int i = 0; i<3; i++){
+      delay(400);
+      motor1Backward();
+      motor1Backward();
+      motor1Backward();
+      motor1Backward();
+      motor1Backward();
+      
+      delay(1000);
+      motor1Forward();
+      delay(1000);
+      delay(200);
+      // delay(1000);
+      // motor2Forward();
+      // delay(1000);
+      // motor2Backward();
 
-  if (!huskylens.request()) {
-      Serial.println(F("Fail to request data from HUSKYLENS, recheck the connection!"));
     }
-    else if(!huskylens.isLearned()){ 
-      Serial.println(F("Nothing learned, press learn button on HUSKYLENS to learn one!"));
-    }
-    else if(!huskylens.available()) {
-      Serial.println(F("No block or arrow appears on the screen!"));
-    }
+      boo = false;
+
+  }
+  // if (!huskylens.request()) {
+  //     Serial.println(F("Fail to request data from HUSKYLENS, recheck the connection!"));
+  //   }
+  //   else if(!huskylens.isLearned()){ 
+  //     Serial.println(F("Nothing learned, press learn button on HUSKYLENS to learn one!"));
+  //   }
+  //   else if(!huskylens.available()) {
+  //     Serial.println(F("No block or arrow appears on the screen!"));
+  //   }
     
-    else
-    {
-        Serial.println(F("###########"));
-        while (huskylens.available())
-        {
-            HUSKYLENSResult result = huskylens.read();
-            printResult(result);
-            // sense(result);
-            if(getValue(result) == 1){
-              Serial.println(F("ROCK"));
-            }
-            else if(getValue(result) == 2){
-              Serial.println(F("SCISSORS"));
-            }
-            else if(getValue(result) == 3){
-              Serial.println(F("PAPER"));
-            }
-        }    
-    }
-  long random = randomChoice();
-  if (random == 1) {
-    rock();
-  }
-  else if (random == 3) {
-    paper();
-  }
-  else {
-    scissors();
-  }
-  delay(3000);
-  stopAllMotors();
-  delay(3000);
-  rock();
-  delay(3000);
-  stopAllMotors();
-  delay(3000);
+  //   else
+  //   {
+  //       Serial.println(F("###########"));
+  //       while (huskylens.available())
+  //       {
+  //           HUSKYLENSResult result = huskylens.read();
+  //           printResult(result);
+  //           // sense(result);
+  //           if(getValue(result) == 1){
+  //             Serial.println(F("ROCK"));
+  //             random = 1;
+  //             // rock();
+  //           }
+  //           else if(getValue(result) == 2){
+  //             Serial.println(F("SCISSORS"));
+  //             random = 1;
+  //             // rock();
+  //           }
+  //           else if(getValue(result) == 3){
+  //             Serial.println(F("PAPER"));
+  //             random = 2;
+  //             // scissors();
+  //           }
+  //       }    
+  //   }
+ 
+  // if (random == 1) {
+  //   rock();
+  // }
+  // else if (random == 3) {
+  //   // paper();
+  //   rock();
+  // }
+  // else {
+  //   scissors();
+  // }
+  // // delay(3000);
+  // // stopAllMotors();
+  // // delay(3000);
+  // // rock();
+  // // delay(3000);
+  // // stopAllMotors();
+  // delay(1000);
 }
 
 void stopAllMotors(){
@@ -231,4 +261,3 @@ void paper() {
 long randomChoice() {
   return random(1, 4) ;
 }
-
